@@ -8,4 +8,5 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         @JsonSubTypes.Type(value = CarDto.class),@JsonSubTypes.Type(value = AirPlaneDto.class)
 })
 public interface Collateral {
+
 }

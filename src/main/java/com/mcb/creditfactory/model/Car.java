@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -23,6 +24,12 @@ public class Car {
     @Column(name = "year_of_issue")
     private Short year;
 
+    @OneToMany(targetEntity = Assessment.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "id",referencedColumnName = "id")
+    private List<Assessment> assessments;
+
+    /*
     @Column(name = "assessed_value")
     private BigDecimal value;
+    */
 }
